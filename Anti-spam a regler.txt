@@ -1,0 +1,58 @@
+
+  // const antiSpam = new AntiSpam({
+  //     warnThreshold: 3, // Amount of messages sent in a row that will cause a warning.
+  //     kickThreshold: 5, // Amount of messages sent in a row that will cause a kick.
+  //     banThreshold: 10, // Amount of messages sent in a row that will cause a ban.
+  //     maxInterval: 5000, // Amount of time (in milliseconds) in which messages are considered spam.
+  //     maxDuplicatesInterval: 2000,
+  //     warnMessage: '{@user}, Please stop spamming.', // Message that will be sent in chat upon warning a user.
+  //     kickMessage: '**{user_tag}** has been kicked for spamming.', // Message that will be sent in chat upon kicking a user.
+  //     banMessage: '**{user_tag}** has been banned for spamming.', // Message that will be sent in chat upon banning a user.
+  //     maxDuplicatesWarning: 3, // Amount of duplicate messages that trigger a warning.
+  //     maxDuplicatesKick: 5, // Amount of duplicate messages that trigger a warning.
+  //     maxDuplicatesBan: 10, // Amount of duplicate messages that trigger a warning.
+  //     deleteMessagesAfterBanForPastDays: 1,
+  //     exemptPermissions: [], // Bypass users with any of these permissions.
+  //     ignoreBots: true, // Ignore bot messages.
+  //     verbose: true, // Extended Logs from module.
+  //     ignoredUsers: [], // Array of User IDs that get ignored.
+  //     ignoredRoles: [], //Array of string role IDs or role name that are ignored
+  //     ignoredChannels: ['744938798902804552'], // Array of string channels IDs that are ignored
+  //     warnEnabled: true,
+  //     kickEnabled: true,
+  //     banEnabled: false,
+  //     // And many more options... See the documentation.
+  // });
+
+  // client.on('message', (msg) => {
+  //   antiSpam.message(msg);
+  // });
+
+  // antiSpam.on("error", (message, error, type) => {
+  //   chan.send(`${message.author.tag} couldn't receive the sanction '${type}', error: \`${error}\``);
+  // });
+
+  const embedWarn = new MessageEmbed()
+  .setColor('#fdd000')
+  .setTitle('ANTI-SPAM')
+  .setDescription(`${message.author.tag} a ete warn pour spam`)
+  .setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
+  .setTimestamp();
+
+  const embedKick = new MessageEmbed()
+  .setColor('#ff8400')
+  .setTitle('ANTI-SPAM')
+  .setDescription(`${message.author.tag} a ete kick pour spam`)
+  .setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
+  .setTimestamp();
+
+  const embedBan = new MessageEmbed()
+  .setColor('#fd0000')
+  .setTitle('ANTI-SPAM')
+  .setDescription(`${message.author.tag} a ete ban pour spam`)
+  .setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
+  .setTimestamp();
+
+  // antiSpam.on("warnAdd", (member) => chan.send(embedWarn));
+  // antiSpam.on("banAdd", (member) => chan.send(embedBan));
+  // antiSpam.on("kickAdd", (member) => chan.send(embedKick));
